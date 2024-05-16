@@ -1,7 +1,31 @@
 import 'package:flutter/material.dart';
 
+import 'features/home/presentation/views/widgets/home_view.dart';
+import 'features/splash_screen/presentation/views/widgets/splash_view.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(const PtcApp());
+}
+
+class PtcApp extends StatelessWidget {
+  const PtcApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/': (context) => SplashScreen(),
+        '/home': (context) => HomePage(),
+      },
+      // home: Scaffold(
+      //   backgroundColor: Color(0xFF53B175),
+      //   drawerScrimColor: Color(0xFF53B175),
+      //   body: Container(color: Color(0xFF53B175),
+      //       child: SplashScreen()),
+      // ),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
